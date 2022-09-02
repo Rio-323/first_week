@@ -13,10 +13,59 @@
             crossorigin="anonymous"></script>
 
     <title>스파르타코딩클럽 | 부트스트랩 연습하기</title>
+    <link href="https://fonts.googleapis.com/css2?family=Gowun+Dodum&display=swap" rel="stylesheet"> /* 폰트 넣기 */
+
+    <style>
+        *
+        { /* 페이지 전체에 동기화 */
+            font-family: 'Gowun Dodum', sans-serif;
+        }
+
+        .mytitle
+        {
+            background-color: green;
+            height: 250px;
+            width: 100%;
+
+            background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)) /* 이미지 어둡게 하기 */, url("https://movie-phinf.pstatic.net/20210715_95/1626338192428gTnJl_JPEG/movie_image.jpg");
+            background-position: center;
+            background-size: cover; /* 이미지 가운데 정렬 */
+
+            color: white;
+
+            display: flex;
+            flex-direction: column; /* 가로로 정렬하고 싶다면 row */
+            justify-content: center;
+            align-items: center; /* 글 가운데 정렬 하는 방법 */
+        }
+
+        .mytitle > button
+        {
+            width: 200px;
+            height: 50px;
+
+            background-color: transparent; /* 투명한 색 */
+            color: white;
+
+            border-radius: 50px; /* 곡률 주는 법 */
+
+            border: 1px solid white; /* 선 굵기가 1px, 색은 solid white */
+
+            margin-top: 10px; /* 위에 공간 여유 남기기 */
+        }
+
+        .mytitle > button:hover /* 마우스가 가까이 갔을 때 굵게 변함 */
+        {
+            border: 2px solid white;
+        }
+    </style>
 </head>
 
 <body>
-    <button type="button" class="btn btn-primary">나는 버튼이다</button>
+    <div class = "mytitle">
+        <h1>내 생애 최고의 영화들</h1>
+        <button>영화 기록하기</button>
+    </div>
 </body>
 
 </html>
