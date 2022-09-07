@@ -1,0 +1,128 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+            crossorigin="anonymous"></script>
+
+    <title>팬명록 페이지</title>
+
+    <style>
+        * {
+            font-family: 'Gowun Dodum', sans-serif;
+        }
+
+        .mytitle {
+            height: 250px;
+            width: 100%;
+
+            background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)) /* 이미지 어둡게 하기 */, url("https://entertainimg.kbsmedia.co.kr/cms/uploads/PERSON_20220725114105_4248c625cfd32864629a09b663537a08.jpg");
+            background-position: center;
+            background-size: cover; /* 이미지 가운데 정렬 */
+
+            color: white;
+
+            display: flex;
+            flex-direction: column; /* 가로로 정렬하고 싶다면 row */
+            justify-content: center;
+            align-items: center; /* 글 가운데 정렬 하는 방법 */
+        }
+
+        .mypost {
+            max-width: 500px;
+            width: 95%;
+
+            margin: 20px auto 0px auto;
+
+            box-shadow: 0px 0px 3px 0px gray;
+            padding: 20px;
+        }
+
+        .card {
+            max-width: 500px;
+            width: 95%;
+
+            margin: 20px auto 0px auto;
+
+            box-shadow: 0px 0px 3px 0px gray;
+            padding: 20px;
+        }
+
+        .mybtn {
+            margin-top: 15px;
+
+            display: flex;
+        }
+
+        .form-floating {
+            max-height: 1000px;
+            height: 95%;
+        }
+
+    </style>
+
+    <script>
+        $(document).ready(function ()
+        {
+            alert('다 로딩됐다!')
+        });
+
+
+        $.ajax
+        ({
+            type: "GET",
+            url: "http://spartacodingclub.shop/sparta_api/weather/seoul",
+            data: {},
+            success: function (response) {
+                let temp = response['temp']
+
+                $('#temp').text(temp)
+
+            }
+        })
+    </script>
+</head>
+
+<body>
+<div class="mytitle">
+    <h1>NewJeans Fan Page</h1>
+    <p>현재기온 : <span id="temp">00.00</span>℃</p>
+</div>
+
+<div class="mypost">
+
+    <div class="form-floating mb-3">
+        <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com">
+        <label for="floatingInput">닉네임</label>
+    </div>
+
+    <div class="form-floating">
+        <textarea class="form-control" placeholder="Leave a comment here" id="floatingTextarea"></textarea>
+        <label for="floatingTextarea">응원댓글</label>
+    </div>
+
+    <div class="mybtn">
+        <button type="button" class="btn btn-dark">응원남기기</button>
+    </div>
+
+</div>
+
+<div class="card">
+    <div class="card-body">
+        <blockquote class="blockquote mb-0">
+            <p>뉴진스 화이팅!!</p>
+            <footer class="blockquote-footer"><cite title="Source Title">KSY</cite>
+            </footer>
+        </blockquote>
+    </div>
+</div>
+</body>
+
+</html>
